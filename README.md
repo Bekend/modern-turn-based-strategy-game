@@ -66,6 +66,6 @@ A comprehensive, decoupled 4X turn-based tactical grand strategy game built from
 
 ## 👤 Author
 **Seyed Shahabeddin Hosseini Bay**
-- Portfolio: [shahab-hb.ir](https://shahab-hb.ir)
+- Portfolio: [shahabhb.ir](https://shahabhb.ir)
 - GitHub: [@Bekend](https://github.com/Bekend)
 - Email: [shahabhosseinibay@gmail.com](mailto:shahabhosseinibay@gmail.com)
