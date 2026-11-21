@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BiomeData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/BiomeData.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+id = "hills"
+biome_name = "Highlands/Hills"
+biome_type = 2
+move_cost = 2
+defense_bonus_percent = 25
+is_passable = true
+yield_food = 1
+yield_production = 2
+yield_science = 0
+color_tint = Color(0.48, 0.44, 0.31, 1)
+description = "Elevated rolling hills. Costs 2 MP, grants +25% defense."

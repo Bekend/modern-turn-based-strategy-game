@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TechNode" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/TechNode.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+tech_id = "gunpowder"
+title = "Gunpowder"
+description = "Combustive saltpeter chemical formula. Reveals Niter deposits across the realm and trains Musketman line infantry."
+science_cost = 120
+tier = 7
+era = "Renaissance"
+prerequisites = ["machinery", "feudalism"]
+unlocked_units = ["musketman"]
+unlocked_improvements = []
+reveals_strategic_resource = "niter"
+highland_move_cost_reduction = 0
+melee_attack_bonus_percent = 5
+defense_bonus_percent = 0
+tree_column = 6
+tree_row = 0

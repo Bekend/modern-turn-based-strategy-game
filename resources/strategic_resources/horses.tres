@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ResourceData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ResourceData.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+id = "horses"
+display_name = "Horses"
+resource_type = 3
+food_bonus = 1
+production_bonus = 1
+science_bonus = 0
+required_tech = "horse_riding"
+is_strategic = true
+icon_color = Color(0.6, 0.4, 0.2, 1)
+symbol_char = "🐎"

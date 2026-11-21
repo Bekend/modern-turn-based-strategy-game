@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TechNode" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/TechNode.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+tech_id = "sailing"
+title = "Sailing"
+description = "Knowledge of coastal navigation and marine winds. Unlocks Harbor district, Galley, and Quadrireme."
+science_cost = 25
+tier = 2
+era = "Ancient"
+prerequisites = ["agriculture"]
+unlocked_units = ["galley", "quadrireme"]
+unlocked_improvements = ["harbor"]
+reveals_strategic_resource = ""
+highland_move_cost_reduction = 0
+melee_attack_bonus_percent = 0
+defense_bonus_percent = 0
+tree_column = 1
+tree_row = 2

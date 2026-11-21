@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ImprovementData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ImprovementData.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+id = "farm"
+improvement_name = "Farm"
+improvement_type = 1
+food_bonus = 3
+production_bonus = 0
+science_bonus = 0
+defense_bonus_percent = 0
+adds_defensive_range = 0
+trains_advanced_units = false
+build_turns = 2
+required_tech = "agriculture"
+icon_color = Color(0.6, 0.72, 0.2, 1)

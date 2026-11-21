@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ImprovementData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ImprovementData.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+id = "mine"
+improvement_name = "Mine"
+improvement_type = 2
+food_bonus = 0
+production_bonus = 3
+science_bonus = 0
+defense_bonus_percent = 0
+adds_defensive_range = 0
+trains_advanced_units = false
+build_turns = 2
+required_tech = "mining"
+icon_color = Color(0.45, 0.42, 0.38, 1)

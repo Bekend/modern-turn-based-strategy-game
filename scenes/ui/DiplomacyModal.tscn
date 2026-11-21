@@ -1,0 +1,306 @@
+[gd_scene format=3 uid="uid://diplomacymodal01"]
+
+[ext_resource type="Script" path="res://scripts/ui/DiplomacyModal.gd" id="1_dipmodal"]
+[ext_resource type="Script" path="res://scripts/ui/TouchScrollContainer.gd" id="2_touchscroll"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_modal"]
+bg_color = Color(0.08, 0.11, 0.16, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.22, 0.33, 0.48, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 16
+shadow_color = Color(0, 0, 0, 0.7)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_speech"]
+bg_color = Color(0.05, 0.07, 0.11, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.3, 0.42, 0.8)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="DiplomacyModal" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -245.0
+offset_right = 360.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+script = ExtResource("1_dipmodal")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 14
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HeaderBar" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Margin/VBox/HeaderBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+text = "🏛 IMPERIAL DIPLOMACY & ESPIONAGE BUREAU 🕵️"
+
+[node name="CloseBtn" type="Button" parent="Margin/VBox/HeaderBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = " ✕ "
+
+[node name="TabBar" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CivTabBtn" type="Button" parent="Margin/VBox/TabBar"]
+custom_minimum_size = Vector2(180, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "📜 WORLD CIVILIZATIONS"
+
+[node name="EspionageTabBtn" type="Button" parent="Margin/VBox/TabBar"]
+custom_minimum_size = Vector2(180, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "🕵️ ESPIONAGE BUREAU"
+
+[node name="HSeparator1" type="HSeparator" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="CivView" type="VBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="CivSelectorScroll" type="ScrollContainer" parent="Margin/VBox/CivView"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+horizontal_scroll_mode = 1
+vertical_scroll_mode = 0
+script = ExtResource("2_touchscroll")
+enable_vertical_drag = false
+enable_horizontal_drag = true
+
+[node name="CivButtonsContainer" type="HBoxContainer" parent="Margin/VBox/CivView/CivSelectorScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="HSeparatorCiv" type="HSeparator" parent="Margin/VBox/CivView"]
+layout_mode = 2
+
+[node name="CivDetailsVBox" type="VBoxContainer" parent="Margin/VBox/CivView"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="CivHeaderBox" type="HBoxContainer" parent="Margin/VBox/CivView/CivDetailsVBox"]
+layout_mode = 2
+
+[node name="LeaderLabel" type="Label" parent="Margin/VBox/CivView/CivDetailsVBox/CivHeaderBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+text = "Leader Emissary: Ironfang Empire"
+
+[node name="StatusBadge" type="Label" parent="Margin/VBox/CivView/CivDetailsVBox/CivHeaderBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "🕊 AT PEACE"
+
+[node name="OpinionLabel" type="Label" parent="Margin/VBox/CivView/CivDetailsVBox/CivHeaderBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "  |  Opinion: Neutral (+0)"
+
+[node name="IntelPanel" type="PanelContainer" parent="Margin/VBox/CivView/CivDetailsVBox"]
+layout_mode = 2
+
+[node name="IntelHBox" type="HBoxContainer" parent="Margin/VBox/CivView/CivDetailsVBox/IntelPanel"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="CitiesCountLabel" type="Label" parent="Margin/VBox/CivView/CivDetailsVBox/IntelPanel/IntelHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "🏛 Known Cities: 0"
+
+[node name="UnitsCountLabel" type="Label" parent="Margin/VBox/CivView/CivDetailsVBox/IntelPanel/IntelHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.75, 0.3, 1)
+theme_override_font_sizes/font_size = 12
+text = "⚔ Military Units: 0"
+
+[node name="TradeStatusLabel" type="Label" parent="Margin/VBox/CivView/CivDetailsVBox/IntelPanel/IntelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.4, 0.95, 0.5, 1)
+theme_override_font_sizes/font_size = 12
+text = "🤝 Trade: None"
+
+[node name="SpeechBox" type="Panel" parent="Margin/VBox/CivView/CivDetailsVBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_speech")
+
+[node name="SpeechLabel" type="Label" parent="Margin/VBox/CivView/CivDetailsVBox/SpeechBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = -12.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "Greetings from the Ironfang Empire."
+autowrap_mode = 3
+
+[node name="CivActions" type="HBoxContainer" parent="Margin/VBox/CivView/CivDetailsVBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 10
+
+[node name="WarBtn" type="Button" parent="Margin/VBox/CivView/CivDetailsVBox/CivActions"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "DECLARE WAR ⚔"
+
+[node name="PeaceBtn" type="Button" parent="Margin/VBox/CivView/CivDetailsVBox/CivActions"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "PROPOSE PEACE 🕊"
+
+[node name="TradeBtn" type="Button" parent="Margin/VBox/CivView/CivDetailsVBox/CivActions"]
+custom_minimum_size = Vector2(140, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "TRADE DEAL 🤝 (20🪙)"
+
+[node name="SellResBtn" type="Button" parent="Margin/VBox/CivView/CivDetailsVBox/CivActions"]
+custom_minimum_size = Vector2(130, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "SELL RES (+40🪙)"
+
+[node name="EspionageView" type="VBoxContainer" parent="Margin/VBox"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="EspionageHeaderBox" type="HBoxContainer" parent="Margin/VBox/EspionageView"]
+layout_mode = 2
+
+[node name="SpyCapacityLabel" type="Label" parent="Margin/VBox/EspionageView/EspionageHeaderBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "🕵️ Covert Agents: 0 / 1 (Capacity: 1)"
+
+[node name="SpyTechHintLabel" type="Label" parent="Margin/VBox/EspionageView/EspionageHeaderBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.7, 0.75, 0.8, 1)
+theme_override_font_sizes/font_size = 11
+text = "Train Spies in any city. Spies are off-map covert agents."
+horizontal_alignment = 2
+
+[node name="HSeparatorEsp" type="HSeparator" parent="Margin/VBox/EspionageView"]
+layout_mode = 2
+
+[node name="EspionageContentHBox" type="HBoxContainer" parent="Margin/VBox/EspionageView"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="AgentsPane" type="VBoxContainer" parent="Margin/VBox/EspionageView/EspionageContentHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.0
+theme_override_constants/separation = 6
+
+[node name="AgentsHeaderLabel" type="Label" parent="Margin/VBox/EspionageView/EspionageContentHBox/AgentsPane"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "ACTIVE AGENTS:"
+
+[node name="AgentsScroll" type="ScrollContainer" parent="Margin/VBox/EspionageView/EspionageContentHBox/AgentsPane"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+script = ExtResource("2_touchscroll")
+enable_vertical_drag = true
+
+[node name="AgentsContainer" type="VBoxContainer" parent="Margin/VBox/EspionageView/EspionageContentHBox/AgentsPane/AgentsScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="OperationsPane" type="VBoxContainer" parent="Margin/VBox/EspionageView/EspionageContentHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.6
+theme_override_constants/separation = 6
+
+[node name="OpsHeaderLabel" type="Label" parent="Margin/VBox/EspionageView/EspionageContentHBox/OperationsPane"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "OPERATIONS & DEPLOYMENT:"
+
+[node name="OpsScroll" type="ScrollContainer" parent="Margin/VBox/EspionageView/EspionageContentHBox/OperationsPane"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+script = ExtResource("2_touchscroll")
+enable_vertical_drag = true
+
+[node name="OpsVBox" type="VBoxContainer" parent="Margin/VBox/EspionageView/EspionageContentHBox/OperationsPane/OpsScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="SelectedAgentInfoLabel" type="Label" parent="Margin/VBox/EspionageView/EspionageContentHBox/OperationsPane/OpsScroll/OpsVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Select an agent to assign missions or deployment."
+autowrap_mode = 3
+
+[node name="MissionsContainer" type="VBoxContainer" parent="Margin/VBox/EspionageView/EspionageContentHBox/OperationsPane/OpsScroll/OpsVBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="RelocateContainer" type="VBoxContainer" parent="Margin/VBox/EspionageView/EspionageContentHBox/OperationsPane/OpsScroll/OpsVBox"]
+layout_mode = 2
+theme_override_constants/separation = 6

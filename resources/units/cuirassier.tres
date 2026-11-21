@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/UnitData.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+id = "cuirassier"
+unit_name = "Cuirassier"
+unit_class = 4
+combat_strength = 64
+ranged_strength = 0
+attack_range = 1
+max_movement_points = 4
+max_health = 100
+production_cost = 120
+tech_prerequisite = "military_science"
+strategic_prerequisite = "niter"
+upgrade_unit_id = ""
+upgrade_cost = 0
+can_found_city = false
+can_build_improvements = false
+can_build_military_structures = false
+is_naval = false
+sight_range = 3
+color_tint = Color(0.9, 0.7, 0.2, 1)
+icon_symbol = "🏇"

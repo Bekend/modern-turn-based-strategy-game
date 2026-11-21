@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TechNode" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/TechNode.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+tech_id = "square_rigging"
+title = "Square Rigging"
+description = "Multi-masted blue-water square-rigged sail systems. Unlocks broadside cannon Frigates to dominate open seas."
+science_cost = 130
+tier = 7
+era = "Renaissance"
+prerequisites = ["shipbuilding"]
+unlocked_units = ["frigate"]
+unlocked_improvements = []
+reveals_strategic_resource = ""
+highland_move_cost_reduction = 0
+melee_attack_bonus_percent = 0
+defense_bonus_percent = 0
+tree_column = 6
+tree_row = 2

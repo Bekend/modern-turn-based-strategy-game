@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/UnitData.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+id = "horseman"
+unit_name = "Horseman"
+unit_class = 1
+combat_strength = 22
+ranged_strength = 0
+attack_range = 1
+max_movement_points = 3
+max_health = 100
+production_cost = 55
+tech_prerequisite = "horse_riding"
+strategic_prerequisite = "horses"
+upgrade_unit_id = "knight"
+upgrade_cost = 45
+can_found_city = false
+can_build_improvements = false
+sight_range = 3
+color_tint = Color(0.15, 0.55, 0.85, 1)
+icon_symbol = "🐴"

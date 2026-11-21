@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ImprovementData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ImprovementData.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+id = "castle"
+improvement_name = "Castle"
+improvement_type = 8
+food_bonus = 0
+production_bonus = 2
+science_bonus = 0
+gold_bonus = 0
+defense_bonus_percent = 50
+adds_defensive_range = 1
+trains_advanced_units = true
+build_turns = 4
+required_tech = "feudalism"
+icon_color = Color(0.50, 0.55, 0.55, 1)

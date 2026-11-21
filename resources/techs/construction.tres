@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TechNode" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/TechNode.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+tech_id = "construction"
+title = "Construction"
+description = "Advanced masonry and hydraulics. Reveals Gems and unlocks Aqueducts."
+science_cost = 60
+tier = 5
+era = "Classical"
+prerequisites = ["iron_working"]
+unlocked_units = []
+unlocked_improvements = ["aqueduct"]
+reveals_strategic_resource = "gems"
+highland_move_cost_reduction = 0
+melee_attack_bonus_percent = 0
+defense_bonus_percent = 0
+tree_column = 4
+tree_row = 2

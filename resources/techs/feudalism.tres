@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TechNode" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/TechNode.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+tech_id = "feudalism"
+title = "Feudalism"
+description = "Manorial organization. Unlocks Castle fortifications and gives bonus Farm food yield."
+science_cost = 85
+tier = 6
+era = "Medieval"
+prerequisites = ["construction"]
+unlocked_units = []
+unlocked_improvements = ["castle"]
+reveals_strategic_resource = ""
+highland_move_cost_reduction = 0
+melee_attack_bonus_percent = 0
+defense_bonus_percent = 15
+tree_column = 5
+tree_row = 2

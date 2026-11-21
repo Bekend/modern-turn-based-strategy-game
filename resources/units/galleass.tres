@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/UnitData.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+id = "galleass"
+unit_name = "Galleass"
+unit_class = 6
+combat_strength = 26
+ranged_strength = 35
+attack_range = 2
+max_movement_points = 4
+max_health = 100
+production_cost = 70
+tech_prerequisite = "shipbuilding"
+strategic_prerequisite = ""
+upgrade_unit_id = "frigate"
+upgrade_cost = 75
+can_found_city = false
+can_build_improvements = false
+can_build_military_structures = false
+is_naval = true
+sight_range = 3
+color_tint = Color(0.15, 0.4, 0.75, 1)
+icon_symbol = "🚢"

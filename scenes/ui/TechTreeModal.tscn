@@ -1,0 +1,275 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/TechTreeModal.gd" id="1_techmodal"]
+[ext_resource type="Script" path="res://scripts/ui/TouchScrollContainer.gd" id="2_touchscroll"]
+
+[node name="TechTreeModal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_techmodal")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.04, 0.08, 0.85)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -590.0
+offset_top = -320.0
+offset_right = 590.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeaderBox" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 8.0
+offset_right = -20.0
+offset_bottom = 42.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="Panel/HeaderBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 17
+text = "🔬 TECHNOLOGY ARCHIVE & RESEARCH GRAPH"
+vertical_alignment = 1
+
+[node name="FactionScienceLabel" type="Label" parent="Panel/HeaderBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Empire Science Yield: +5 🔬 / turn"
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="Panel/HeaderBox"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "✕ CLOSE"
+
+[node name="TreeScroll" type="ScrollContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 46.0
+offset_right = -20.0
+offset_bottom = -175.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 1
+vertical_scroll_mode = 0
+script = ExtResource("2_touchscroll")
+enable_vertical_drag = false
+enable_horizontal_drag = true
+
+[node name="TreeContent" type="Control" parent="Panel/TreeScroll"]
+custom_minimum_size = Vector2(1780, 360)
+layout_mode = 2
+
+[node name="EraBar" type="HBoxContainer" parent="Panel/TreeScroll/TreeContent"]
+layout_mode = 0
+offset_right = 1760.0
+offset_bottom = 28.0
+theme_override_constants/separation = 6
+
+[node name="AncientEraBanner" type="PanelContainer" parent="Panel/TreeScroll/TreeContent/EraBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="Label" type="Label" parent="Panel/TreeScroll/TreeContent/EraBar/AncientEraBanner"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "🏛 ANCIENT ERA (FOUNDATIONAL CIVILIZATION)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClassicalEraBanner" type="PanelContainer" parent="Panel/TreeScroll/TreeContent/EraBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.0
+
+[node name="Label" type="Label" parent="Panel/TreeScroll/TreeContent/EraBar/ClassicalEraBanner"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "🏛 CLASSICAL ERA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MedievalEraBanner" type="PanelContainer" parent="Panel/TreeScroll/TreeContent/EraBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.0
+
+[node name="Label" type="Label" parent="Panel/TreeScroll/TreeContent/EraBar/MedievalEraBanner"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "🏰 MEDIEVAL ERA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RenaissanceEraBanner" type="PanelContainer" parent="Panel/TreeScroll/TreeContent/EraBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Label" type="Label" parent="Panel/TreeScroll/TreeContent/EraBar/RenaissanceEraBanner"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "⚜ RENAISSANCE ERA (GUNPOWDER & EXPANSION)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TreeCanvas" type="Control" parent="Panel/TreeScroll/TreeContent"]
+layout_mode = 0
+offset_top = 34.0
+offset_right = 1760.0
+offset_bottom = 360.0
+
+[node name="LineCanvas" type="Control" parent="Panel/TreeScroll/TreeContent/TreeCanvas"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardContainer" type="Control" parent="Panel/TreeScroll/TreeContent/TreeCanvas"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InfoPanel" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -165.0
+offset_right = -20.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Margin" type="MarginContainer" parent="Panel/InfoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="HBox" type="HBoxContainer" parent="Panel/InfoPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="LeftBox" type="VBoxContainer" parent="Panel/InfoPanel/Margin/HBox"]
+custom_minimum_size = Vector2(290, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TitleBox" type="HBoxContainer" parent="Panel/InfoPanel/Margin/HBox/LeftBox"]
+layout_mode = 2
+
+[node name="GlyphLabel" type="Label" parent="Panel/InfoPanel/Margin/HBox/LeftBox/TitleBox"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "⛏"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TechTitle" type="Label" parent="Panel/InfoPanel/Margin/HBox/LeftBox/TitleBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+text = "Mining"
+vertical_alignment = 1
+
+[node name="StatusBadge" type="Label" parent="Panel/InfoPanel/Margin/HBox/LeftBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "[AVAILABLE TO RESEARCH]"
+
+[node name="CostLabel" type="Label" parent="Panel/InfoPanel/Margin/HBox/LeftBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Cost: 25 🔬  •  Est: 5 Turns"
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel/InfoPanel/Margin/HBox/LeftBox"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+show_percentage = false
+
+[node name="ProgressText" type="Label" parent="Panel/InfoPanel/Margin/HBox/LeftBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Research Progress: 0 / 25 🔬"
+
+[node name="CenterBox" type="VBoxContainer" parent="Panel/InfoPanel/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="TechDesc" type="Label" parent="Panel/InfoPanel/Margin/HBox/CenterBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Allows excavation of mineral wealth and production-boosting Mines on hills."
+autowrap_mode = 2
+
+[node name="UnlocksHeader" type="Label" parent="Panel/InfoPanel/Margin/HBox/CenterBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "TACTICAL & STRATEGIC UNLOCKS:"
+
+[node name="UnlocksFlow" type="HFlowContainer" parent="Panel/InfoPanel/Margin/HBox/CenterBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 4
+
+[node name="RightBox" type="VBoxContainer" parent="Panel/InfoPanel/Margin/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 8
+
+[node name="ResearchButton" type="Button" parent="Panel/InfoPanel/Margin/HBox/RightBox"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "COMMENCE RESEARCH 🔬"
+
+[node name="PrereqLabel" type="Label" parent="Panel/InfoPanel/Margin/HBox/RightBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Prerequisites Met ✓"
+horizontal_alignment = 1
+autowrap_mode = 2

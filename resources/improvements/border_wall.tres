@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ImprovementData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ImprovementData.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+id = "border_wall"
+improvement_name = "Border Wall"
+improvement_type = 10
+food_bonus = 0
+production_bonus = 0
+science_bonus = 0
+defense_bonus_percent = 50
+adds_defensive_range = 0
+trains_advanced_units = false
+build_turns = 1
+required_tech = "bronze_working"
+icon_color = Color(0.6, 0.6, 0.65, 1)

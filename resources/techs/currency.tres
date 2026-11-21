@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TechNode" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/TechNode.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+tech_id = "currency"
+title = "Currency"
+description = "Standardized coinage and trade economics. Reveals Gold Ore and unlocks Markets."
+science_cost = 55
+tier = 5
+era = "Classical"
+prerequisites = ["writing"]
+unlocked_units = []
+unlocked_improvements = ["market"]
+reveals_strategic_resource = "gold_ore"
+highland_move_cost_reduction = 0
+melee_attack_bonus_percent = 0
+defense_bonus_percent = 0
+tree_column = 4
+tree_row = 1

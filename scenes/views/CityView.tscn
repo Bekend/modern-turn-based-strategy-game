@@ -1,0 +1,125 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/views/CityView.gd" id="1_cityview"]
+
+[node name="CityView" type="Node2D"]
+script = ExtResource("1_cityview")
+
+[node name="Shadow" type="ColorRect" parent="."]
+offset_left = -7.0
+offset_top = -6.0
+offset_right = 7.0
+offset_bottom = 7.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="WallsBorder" type="ColorRect" parent="."]
+visible = false
+offset_left = -8.0
+offset_top = -7.0
+offset_right = 8.0
+offset_bottom = 7.0
+mouse_filter = 2
+color = Color(0.42, 0.45, 0.5, 1)
+
+[node name="Crenel1" type="ColorRect" parent="WallsBorder"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = -2.0
+offset_right = 3.0
+offset_bottom = 0.0
+mouse_filter = 2
+color = Color(0.5, 0.53, 0.58, 1)
+
+[node name="Crenel2" type="ColorRect" parent="WallsBorder"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 10.0
+offset_bottom = 0.0
+mouse_filter = 2
+color = Color(0.5, 0.53, 0.58, 1)
+
+[node name="Crenel3" type="ColorRect" parent="WallsBorder"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = -2.0
+offset_right = 16.0
+offset_bottom = 0.0
+mouse_filter = 2
+color = Color(0.5, 0.53, 0.58, 1)
+
+[node name="CastleIcon" type="ColorRect" parent="."]
+offset_left = -6.0
+offset_top = -5.0
+offset_right = 6.0
+offset_bottom = 5.0
+mouse_filter = 2
+color = Color(0.7, 0.72, 0.75, 1)
+
+[node name="FactionRoof" type="ColorRect" parent="CastleIcon"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+mouse_filter = 2
+color = Color(0.2, 0.6, 1, 1)
+
+[node name="CastleDoor" type="ColorRect" parent="CastleIcon"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -4.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0.18, 0.15, 0.12, 1)
+
+[node name="FortBarBg" type="ColorRect" parent="."]
+offset_left = -6.0
+offset_top = -12.0
+offset_right = 6.0
+offset_bottom = -9.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.85)
+
+[node name="FortBarFill" type="ColorRect" parent="FortBarBg"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 2.0
+mouse_filter = 2
+color = Color(0, 0.82, 0.83, 1)
+
+[node name="HPBarBg" type="ColorRect" parent="."]
+offset_left = -6.0
+offset_top = -8.0
+offset_right = 6.0
+offset_bottom = -5.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.85)
+
+[node name="HPBarFill" type="ColorRect" parent="HPBarBg"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 2.0
+mouse_filter = 2
+color = Color(0.18, 0.8, 0.44, 1)
+
+[node name="PopBadge" type="ColorRect" parent="."]
+offset_left = 3.0
+offset_top = -5.0
+offset_right = 6.0
+offset_bottom = -2.0
+mouse_filter = 2
+color = Color(0.95, 0.75, 0.1, 1)
+

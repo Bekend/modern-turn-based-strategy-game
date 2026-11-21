@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TechNode" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/TechNode.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+tech_id = "espionage"
+title = "Espionage"
+description = "Covert intelligence and clandestine statecraft. Unlocks the Spy unit (Capacity: 1) and foreign intelligence operations."
+science_cost = 65
+tier = 7
+era = "Medieval"
+prerequisites = ["writing", "currency"]
+unlocked_units = ["spy"]
+unlocked_improvements = []
+reveals_strategic_resource = ""
+highland_move_cost_reduction = 0
+melee_attack_bonus_percent = 0
+defense_bonus_percent = 0
+tree_column = 6
+tree_row = 1

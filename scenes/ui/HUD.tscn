@@ -1,0 +1,552 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/HUD.gd" id="1_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/DiplomacyModal.tscn" id="2_dipmodal"]
+[ext_resource type="Script" path="res://scripts/ui/TouchScrollContainer.gd" id="3_touchscroll"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="TopBar" type="Panel" parent="."]
+texture_filter = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TurnLabel" type="Label" parent="TopBar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -12.0
+offset_right = 87.0
+offset_bottom = 12.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+text = "TURN: 1"
+vertical_alignment = 1
+
+[node name="MenuButton" type="Button" parent="TopBar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 92.0
+offset_top = -14.0
+offset_right = 162.0
+offset_bottom = 14.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "MENU ⚙"
+
+[node name="GoldLabel" type="Label" parent="TopBar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 170.0
+offset_top = -12.0
+offset_right = 250.0
+offset_bottom = 12.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.84, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "🪙 50"
+vertical_alignment = 1
+
+[node name="DiplomacyButton" type="Button" parent="TopBar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 256.0
+offset_top = -14.0
+offset_right = 358.0
+offset_bottom = 14.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "DIPLOMACY 📜"
+
+[node name="EspionageButton" type="Button" parent="TopBar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 364.0
+offset_top = -14.0
+offset_right = 466.0
+offset_bottom = 14.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "ESPIONAGE 🕵️"
+
+[node name="PhaseLabel" type="Label" parent="TopBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -12.0
+offset_right = 80.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 13
+text = "YOUR TURN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CycleUnitButton" type="Button" parent="TopBar"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -476.0
+offset_top = -14.0
+offset_right = -380.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "NEXT UNIT ⏭"
+
+[node name="CycleCityButton" type="Button" parent="TopBar"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -374.0
+offset_top = -14.0
+offset_right = -278.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "NEXT CITY 🏛"
+
+[node name="TechButton" type="Button" parent="TopBar"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -14.0
+offset_right = -132.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "TECH: Mining (0/25)"
+
+[node name="EndTurnButton" type="Button" parent="TopBar"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -14.0
+offset_right = -10.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "END TURN ▶"
+
+[node name="FactionLegendBar" type="Panel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 40.0
+offset_bottom = 66.0
+grow_horizontal = 2
+
+[node name="LegendContainer" type="HBoxContainer" parent="FactionLegendBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_right = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="PlayerFactionBadge" type="Label" parent="FactionLegendBar/LegendContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.6, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "🔵 Solaris Dominion (YOU): 3 Units, 0 Cities"
+
+[node name="Rival1Badge" type="Label" parent="FactionLegendBar/LegendContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 12
+text = "🔴 Ironfang Empire (Rival): 2 Units, 0 Cities"
+
+[node name="Rival2Badge" type="Label" parent="FactionLegendBar/LegendContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25, 0.85, 0.45, 1)
+theme_override_font_sizes/font_size = 12
+text = "🟢 Verdant Kingdom (Rival): 2 Units, 0 Cities"
+
+[node name="BarbarianBadge" type="Label" parent="FactionLegendBar/LegendContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.3, 0.9, 1)
+theme_override_font_sizes/font_size = 12
+text = "🟣 Barbarians (Hostile): Active"
+
+[node name="FeedbackBanner" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 44.0
+offset_bottom = 70.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="FeedbackLabel" type="Label" parent="FeedbackBanner"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomCard" type="Panel" parent="."]
+texture_filter = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -125.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="InfoBox" type="VBoxContainer" parent="BottomCard"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -52.0
+offset_right = 440.0
+offset_bottom = 52.0
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="TitleLabel" type="Label" parent="BottomCard/InfoBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "[YOU] Scout (Solaris Dominion)"
+
+[node name="StatsLabel" type="Label" parent="BottomCard/InfoBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Combat Str: 10  |  Sight: 3"
+
+[node name="HPBox" type="HBoxContainer" parent="BottomCard/InfoBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HPLabel" type="Label" parent="BottomCard/InfoBox/HPBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "HP:"
+
+[node name="HPBar" type="ProgressBar" parent="BottomCard/InfoBox/HPBox"]
+custom_minimum_size = Vector2(160, 14)
+layout_mode = 2
+size_flags_vertical = 4
+value = 100.0
+show_percentage = false
+
+[node name="HPText" type="Label" parent="BottomCard/InfoBox/HPBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.9, 0.4, 1)
+theme_override_font_sizes/font_size = 12
+text = "100 / 100 HP"
+
+[node name="MovementLabel" type="Label" parent="BottomCard/InfoBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.95, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "Movement Points: [ 2 / 2 MP ]  (Plains: 1 MP, Hills: 2 MP)"
+
+[node name="HintLabel" type="Label" parent="BottomCard/InfoBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.75, 1)
+theme_override_font_sizes/font_size = 12
+text = "Click highlighted tile to move, or use Arrow keys / WASD."
+
+[node name="ActionScroll" type="ScrollContainer" parent="BottomCard"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -820.0
+offset_top = -45.0
+offset_right = -16.0
+offset_bottom = 45.0
+grow_horizontal = 0
+grow_vertical = 2
+horizontal_scroll_mode = 1
+vertical_scroll_mode = 0
+script = ExtResource("3_touchscroll")
+enable_vertical_drag = false
+enable_horizontal_drag = true
+
+[node name="ActionButtons" type="HBoxContainer" parent="BottomCard/ActionScroll"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="ProductionMenu" type="Panel" parent="."]
+visible = false
+clip_contents = true
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 44.0
+offset_right = 390.0
+offset_bottom = -16.0
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="ProductionMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="ProductionMenu/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HeaderBox" type="HBoxContainer" parent="ProductionMenu/Margin/VBox"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="ProductionMenu/Margin/VBox/HeaderBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+text = "🏛 CITY PRODUCTION"
+
+[node name="CloseButton" type="Button" parent="ProductionMenu/Margin/VBox/HeaderBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = " ✕ "
+
+[node name="YieldLabel" type="Label" parent="ProductionMenu/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.8, 0.3, 1)
+theme_override_font_sizes/font_size = 11
+text = "Yield: +4 ⚙ / turn (Base: 2, Worked: +2)"
+autowrap_mode = 2
+
+[node name="CurrentProjectCard" type="PanelContainer" parent="ProductionMenu/Margin/VBox"]
+layout_mode = 2
+
+[node name="CardVBox" type="VBoxContainer" parent="ProductionMenu/Margin/VBox/CurrentProjectCard"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ProjectStatusLabel" type="Label" parent="ProductionMenu/Margin/VBox/CurrentProjectCard/CardVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "TRAINING: Scout"
+
+[node name="ProjectProgressBar" type="ProgressBar" parent="ProductionMenu/Margin/VBox/CurrentProjectCard/CardVBox"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+value = 40.0
+show_percentage = false
+
+[node name="ProjectTurnsLabel" type="Label" parent="ProductionMenu/Margin/VBox/CurrentProjectCard/CardVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "10 / 25 ⚙  •  4 Turns Left"
+
+[node name="HSeparator" type="HSeparator" parent="ProductionMenu/Margin/VBox"]
+layout_mode = 2
+
+[node name="OptionsLabel" type="Label" parent="ProductionMenu/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.85, 1)
+theme_override_font_sizes/font_size = 12
+text = "CHOOSE PRODUCTION:"
+
+[node name="ScrollList" type="ScrollContainer" parent="ProductionMenu/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+script = ExtResource("3_touchscroll")
+enable_vertical_drag = true
+
+[node name="OptionsContainer" type="VBoxContainer" parent="ProductionMenu/Margin/VBox/ScrollList"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="VictoryModal" type="Panel" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -150.0
+offset_right = 280.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VictoryModal"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 22
+text = "DOMINATION VICTORY!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="VictoryModal"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -25.0
+offset_right = -20.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "All enemy factions have been utterly conquered."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="RestartButton" type="Button" parent="VictoryModal"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -60.0
+offset_right = -10.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "PLAY AGAIN 🔄"
+
+[node name="MainMenuButton" type="Button" parent="VictoryModal"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -60.0
+offset_right = 170.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "MAIN MENU 🏛"
+
+[node name="PauseModal" type="Panel" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -140.0
+offset_right = 160.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="PauseModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="PauseModal/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "GAME PAUSED"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PauseModal/VBox"]
+layout_mode = 2
+
+[node name="ResumeBtn" type="Button" parent="PauseModal/VBox"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "RESUME GAME ▶"
+
+[node name="SaveBtn" type="Button" parent="PauseModal/VBox"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "SAVE GAME 💾"
+
+[node name="SaveExitBtn" type="Button" parent="PauseModal/VBox"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "SAVE & EXIT TO MENU 🏛"
+
+[node name="DiplomacyModal" parent="." instance=ExtResource("2_dipmodal")]
+visible = false
+

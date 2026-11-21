@@ -1,0 +1,468 @@
+[gd_scene format=3 uid="uid://m1sgp46m7c7f"]
+
+[ext_resource type="Script" uid="uid://g352fwqu8k7r" path="res://scripts/MainMenu.gd" id="1_yqorp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_modal"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+bg_color = Color(0.08, 0.1, 0.16, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.26, 0.36, 0.52, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="MainMenu" type="CanvasLayer" unique_id=2093468525]
+script = ExtResource("1_yqorp")
+
+[node name="BG" type="ColorRect" parent="." unique_id=2085596152]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.06, 0.07, 0.12, 1)
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=420223782]
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.15
+anchor_right = 0.75
+anchor_bottom = 0.85
+
+[node name="VBox" type="VBoxContainer" parent="Panel" unique_id=1475044034]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="TitleLabel" type="Label" parent="Panel/VBox" unique_id=1260694442]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "STRATEGY EMPIRE"
+horizontal_alignment = 1
+
+[node name="HSep1" type="HSeparator" parent="Panel/VBox" unique_id=543525064]
+layout_mode = 2
+
+[node name="MapSection" type="VBoxContainer" parent="Panel/VBox" unique_id=856605711]
+layout_mode = 2
+
+[node name="MapHeaderLabel" type="Label" parent="Panel/VBox/MapSection" unique_id=880518152]
+layout_mode = 2
+text = "MAP SIZE"
+
+[node name="MapSlider" type="HSlider" parent="Panel/VBox/MapSection" unique_id=2083238294]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 3.0
+value = 1.0
+
+[node name="MapSizeLabel" type="Label" parent="Panel/VBox/MapSection" unique_id=741640333]
+layout_mode = 2
+text = "Standard  (44 x 28)"
+horizontal_alignment = 1
+
+[node name="HSep2" type="HSeparator" parent="Panel/VBox" unique_id=323394955]
+layout_mode = 2
+
+[node name="AISection" type="HBoxContainer" parent="Panel/VBox" unique_id=438280225]
+layout_mode = 2
+
+[node name="AIHeaderLabel" type="Label" parent="Panel/VBox/AISection" unique_id=803261200]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "AI OPPONENTS"
+
+[node name="Spacer" type="Control" parent="Panel/VBox/AISection" unique_id=1240034009]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AILessBtn" type="Button" parent="Panel/VBox/AISection" unique_id=1153589867]
+layout_mode = 2
+text = "-"
+
+[node name="AICountLabel" type="Label" parent="Panel/VBox/AISection" unique_id=989200490]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "2"
+horizontal_alignment = 1
+
+[node name="AIMoreBtn" type="Button" parent="Panel/VBox/AISection" unique_id=1506281579]
+layout_mode = 2
+text = "+"
+
+[node name="HSep3" type="HSeparator" parent="Panel/VBox" unique_id=1238581072]
+layout_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="Panel/VBox" unique_id=1040444756]
+layout_mode = 2
+
+[node name="NewGameBtn" type="Button" parent="Panel/VBox/Buttons" unique_id=242901662]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "⚔️ NEW GAME"
+
+[node name="ContinueBtn" type="Button" parent="Panel/VBox/Buttons" unique_id=794868944]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "📜 CONTINUE"
+
+[node name="LocalMultiplayerBtn" type="Button" parent="Panel/VBox/Buttons"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "📡 LOCAL MULTIPLAYER (WIFI)"
+
+[node name="OnlineMultiplayerBtn" type="Button" parent="Panel/VBox/Buttons"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🌐 ONLINE MULTIPLAYER [SOON 🔒]"
+
+[node name="SettingsBtn" type="Button" parent="Panel/VBox/Buttons"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "⚙️ SETTINGS"
+
+[node name="SettingsModal" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.30
+anchor_top = 0.22
+anchor_right = 0.70
+anchor_bottom = 0.78
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+
+[node name="VBox" type="VBoxContainer" parent="SettingsModal"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="SettingsModal/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "AUDIO SETTINGS"
+horizontal_alignment = 1
+
+[node name="HSep" type="HSeparator" parent="SettingsModal/VBox"]
+layout_mode = 2
+
+[node name="SFXBtn" type="Button" parent="SettingsModal/VBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+text = "SFX: ON 🔊"
+
+[node name="MusicBtn" type="Button" parent="SettingsModal/VBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+text = "MUSIC: ON 🎵"
+
+[node name="HSep2" type="HSeparator" parent="SettingsModal/VBox"]
+layout_mode = 2
+
+[node name="CloseBtn" type="Button" parent="SettingsModal/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "CLOSE"
+
+[node name="OnlineModal" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.26
+anchor_top = 0.24
+anchor_right = 0.74
+anchor_bottom = 0.76
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+
+[node name="VBox" type="VBoxContainer" parent="OnlineModal"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="OnlineModal/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "ONLINE MULTIPLAYER"
+horizontal_alignment = 1
+
+[node name="HSep" type="HSeparator" parent="OnlineModal/VBox"]
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="OnlineModal/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Global online matchmaking and cloud multiplayer are currently under active development and coming soon!
+
+In the meantime, enjoy Local WiFi Multiplayer to play with friends on the same network, or battle up to 6 AI civilizations in Single Player."
+autowrap_mode = 3
+horizontal_alignment = 1
+
+[node name="HSep2" type="HSeparator" parent="OnlineModal/VBox"]
+layout_mode = 2
+
+[node name="CloseBtn" type="Button" parent="OnlineModal/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "OK"
+
+[node name="MultiplayerModal" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.10
+anchor_top = 0.05
+anchor_right = 0.90
+anchor_bottom = 0.95
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+
+[node name="VBox" type="VBoxContainer" parent="MultiplayerModal"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="MultiplayerModal/VBox"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MultiplayerModal/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "📡 LOCAL MULTIPLAYER (WIFI LAN)"
+
+[node name="CloseBtn" type="Button" parent="MultiplayerModal/VBox/Header"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+text = "✕"
+
+[node name="Tabs" type="HBoxContainer" parent="MultiplayerModal/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="BrowseTabBtn" type="Button" parent="MultiplayerModal/VBox/Tabs"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "BROWSE LOBBIES"
+
+[node name="HostTabBtn" type="Button" parent="MultiplayerModal/VBox/Tabs"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "HOST LOBBY"
+
+[node name="Views" type="Control" parent="MultiplayerModal/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BrowseView" type="VBoxContainer" parent="MultiplayerModal/VBox/Views"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 10
+
+[node name="StatusLabel" type="Label" parent="MultiplayerModal/VBox/Views/BrowseView"]
+layout_mode = 2
+text = "Scanning WiFi network for active lobbies..."
+
+[node name="Scroll" type="ScrollContainer" parent="MultiplayerModal/VBox/Views/BrowseView"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LobbyList" type="VBoxContainer" parent="MultiplayerModal/VBox/Views/BrowseView/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="RefreshBtn" type="Button" parent="MultiplayerModal/VBox/Views/BrowseView"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "🔄 REFRESH DISCOVERY"
+
+[node name="HSepDirect" type="HSeparator" parent="MultiplayerModal/VBox/Views/BrowseView"]
+layout_mode = 2
+
+[node name="DirectBox" type="HBoxContainer" parent="MultiplayerModal/VBox/Views/BrowseView"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="IPInput" type="LineEdit" parent="MultiplayerModal/VBox/Views/BrowseView/DirectBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Host IP (e.g. 192.168.1.50)"
+
+[node name="PortInput" type="LineEdit" parent="MultiplayerModal/VBox/Views/BrowseView/DirectBox"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "24568"
+placeholder_text = "Port"
+
+[node name="PassInput" type="LineEdit" parent="MultiplayerModal/VBox/Views/BrowseView/DirectBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Password (optional)"
+secret = true
+
+[node name="ConnectBtn" type="Button" parent="MultiplayerModal/VBox/Views/BrowseView/DirectBox"]
+layout_mode = 2
+text = "DIRECT CONNECT"
+
+[node name="HostView" type="VBoxContainer" parent="MultiplayerModal/VBox/Views"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 12
+
+[node name="NameBox" type="HBoxContainer" parent="MultiplayerModal/VBox/Views/HostView"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MultiplayerModal/VBox/Views/HostView/NameBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Lobby Name:"
+
+[node name="NameInput" type="LineEdit" parent="MultiplayerModal/VBox/Views/HostView/NameBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Commander's Game"
+
+[node name="PassBox" type="HBoxContainer" parent="MultiplayerModal/VBox/Views/HostView"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MultiplayerModal/VBox/Views/HostView/PassBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Password (optional):"
+
+[node name="PassInput" type="LineEdit" parent="MultiplayerModal/VBox/Views/HostView/PassBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Leave empty for open lobby"
+secret = true
+
+[node name="PlayerLimitBox" type="HBoxContainer" parent="MultiplayerModal/VBox/Views/HostView"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MultiplayerModal/VBox/Views/HostView/PlayerLimitBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Player Limit (2-7):"
+
+[node name="LessBtn" type="Button" parent="MultiplayerModal/VBox/Views/HostView/PlayerLimitBox"]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+text = "-"
+
+[node name="CountLabel" type="Label" parent="MultiplayerModal/VBox/Views/HostView/PlayerLimitBox"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "4"
+horizontal_alignment = 1
+
+[node name="MoreBtn" type="Button" parent="MultiplayerModal/VBox/Views/HostView/PlayerLimitBox"]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+text = "+"
+
+[node name="AIBOX" type="HBoxContainer" parent="MultiplayerModal/VBox/Views/HostView"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MultiplayerModal/VBox/Views/HostView/AIBOX"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "AI Opponents (0-6):"
+
+[node name="LessBtn" type="Button" parent="MultiplayerModal/VBox/Views/HostView/AIBOX"]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+text = "-"
+
+[node name="CountLabel" type="Label" parent="MultiplayerModal/VBox/Views/HostView/AIBOX"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "2"
+horizontal_alignment = 1
+
+[node name="MoreBtn" type="Button" parent="MultiplayerModal/VBox/Views/HostView/AIBOX"]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+text = "+"
+
+[node name="MapBox" type="HBoxContainer" parent="MultiplayerModal/VBox/Views/HostView"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MultiplayerModal/VBox/Views/HostView/MapBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Map Scale:"
+
+[node name="MapSlider" type="HSlider" parent="MultiplayerModal/VBox/Views/HostView/MapBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 3.0
+value = 1.0
+
+[node name="MapLabel" type="Label" parent="MultiplayerModal/VBox/Views/HostView/MapBox"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Standard (44 x 28)"
+horizontal_alignment = 1
+
+[node name="HSepCreate" type="HSeparator" parent="MultiplayerModal/VBox/Views/HostView"]
+layout_mode = 2
+
+[node name="CreateBtn" type="Button" parent="MultiplayerModal/VBox/Views/HostView"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "CREATE LOBBY & HOST"
+
+[node name="RoomView" type="VBoxContainer" parent="MultiplayerModal/VBox/Views"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 12
+
+[node name="RoomTitleLabel" type="Label" parent="MultiplayerModal/VBox/Views/RoomView"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "LOBBY ROOM"
+horizontal_alignment = 1
+
+[node name="RoomDetailsLabel" type="Label" parent="MultiplayerModal/VBox/Views/RoomView"]
+layout_mode = 2
+text = "Map: Standard | Players: 1/4"
+horizontal_alignment = 1
+
+[node name="PlayerScroll" type="ScrollContainer" parent="MultiplayerModal/VBox/Views/RoomView"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayerList" type="VBoxContainer" parent="MultiplayerModal/VBox/Views/RoomView/PlayerScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="StatusLabel" type="Label" parent="MultiplayerModal/VBox/Views/RoomView"]
+layout_mode = 2
+text = "Waiting for players to join..."
+horizontal_alignment = 1
+
+[node name="RoomActions" type="HBoxContainer" parent="MultiplayerModal/VBox/Views/RoomView"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="LeaveBtn" type="Button" parent="MultiplayerModal/VBox/Views/RoomView/RoomActions"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "LEAVE LOBBY"
+
+[node name="StartBtn" type="Button" parent="MultiplayerModal/VBox/Views/RoomView/RoomActions"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "START MATCH"

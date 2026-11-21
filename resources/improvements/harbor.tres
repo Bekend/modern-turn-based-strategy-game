@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ImprovementData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ImprovementData.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+id = "harbor"
+improvement_name = "Harbor"
+improvement_type = 12
+food_bonus = 1
+production_bonus = 1
+science_bonus = 0
+gold_bonus = 2
+defense_bonus_percent = 0
+adds_defensive_range = 0
+trains_advanced_units = true
+build_turns = 3
+required_tech = "sailing"
+valid_biomes = [0]
+icon_color = Color(0.2, 0.6, 0.9, 1)

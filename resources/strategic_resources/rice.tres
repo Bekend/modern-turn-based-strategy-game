@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ResourceData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ResourceData.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+id = "rice"
+display_name = "Rice"
+resource_type = 1
+food_bonus = 2
+production_bonus = 0
+science_bonus = 0
+required_tech = "agriculture"
+is_strategic = false
+icon_color = Color(0.88, 0.76, 0.27, 1)
+symbol_char = "🌾"

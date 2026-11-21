@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TechNode" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/TechNode.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+tech_id = "horse_riding"
+title = "Horse Riding"
+description = "Domesticates horses, reveals Horse resources, and unlocks swift Horsemen."
+science_cost = 55
+tier = 4
+era = "Ancient"
+prerequisites = ["archery"]
+unlocked_units = ["horseman"]
+unlocked_improvements = ["pasture"]
+reveals_strategic_resource = "horses"
+highland_move_cost_reduction = 0
+melee_attack_bonus_percent = 10
+defense_bonus_percent = 0
+tree_column = 3
+tree_row = 1

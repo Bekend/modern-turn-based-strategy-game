@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ImprovementData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ImprovementData.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+id = "encampment"
+improvement_name = "Military Encampment"
+improvement_type = 4
+food_bonus = 0
+production_bonus = 2
+science_bonus = 0
+defense_bonus_percent = 25
+adds_defensive_range = 1
+trains_advanced_units = true
+build_turns = 3
+required_tech = "bronze_working"
+icon_color = Color(0.85, 0.25, 0.25, 1)
+health = 100
+max_health = 100
+fortification = 50
+max_fortification = 50
+has_walls = true
+bombard_strength = 18
+bombard_range = 2
+

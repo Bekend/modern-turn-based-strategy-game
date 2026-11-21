@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BiomeData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/BiomeData.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+id = "ocean"
+biome_name = "Ocean"
+biome_type = 0
+move_cost = 999
+defense_bonus_percent = 0
+is_passable = false
+yield_food = 1
+yield_production = 0
+yield_science = 0
+color_tint = Color(0.18, 0.38, 0.72, 1)
+description = "Deep water. Impassable without naval vessels."

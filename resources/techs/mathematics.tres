@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TechNode" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/TechNode.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+tech_id = "mathematics"
+title = "Mathematics"
+description = "Advanced geometry and mechanics. Unlocks Catapult siege engines."
+science_cost = 50
+tier = 5
+era = "Classical"
+prerequisites = ["writing", "bronze_working"]
+unlocked_units = ["catapult"]
+unlocked_improvements = []
+reveals_strategic_resource = ""
+highland_move_cost_reduction = 0
+melee_attack_bonus_percent = 0
+defense_bonus_percent = 0
+tree_column = 4
+tree_row = 0

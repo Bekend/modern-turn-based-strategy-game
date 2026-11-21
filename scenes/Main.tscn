@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_main"]
+[ext_resource type="Script" path="res://scripts/controllers/TouchCameraController.gd" id="2_camera"]
+[ext_resource type="Script" path="res://scripts/views/MapView.gd" id="3_mapview"]
+[ext_resource type="Script" path="res://scripts/views/TerritoryLayer.gd" id="4_territory"]
+[ext_resource type="Script" path="res://scripts/views/FogOfWarLayer.gd" id="5_fog"]
+[ext_resource type="Script" path="res://scripts/controllers/PlayerInputController.gd" id="6_input"]
+[ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="7_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/TechTreeModal.tscn" id="8_techmodal"]
+[ext_resource type="Script" path="res://scripts/views/SettlerLensLayer.gd" id="10_settlerlens"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="TouchCamera" type="Camera2D" parent="."]
+script = ExtResource("2_camera")
+
+[node name="MapView" type="Node2D" parent="."]
+script = ExtResource("3_mapview")
+
+[node name="TerrainLayer" type="TileMapLayer" parent="MapView"]
+
+[node name="FeatureLayer" type="TileMapLayer" parent="MapView"]
+
+[node name="ScienceLayer" type="TileMapLayer" parent="MapView"]
+
+[node name="TerritoryLayer" type="Node2D" parent="MapView"]
+script = ExtResource("4_territory")
+
+[node name="SettlerLensLayer" type="Node2D" parent="MapView"]
+script = ExtResource("10_settlerlens")
+
+[node name="OverlayLayer" type="TileMapLayer" parent="MapView"]
+
+[node name="FogOfWarLayer" type="Node2D" parent="MapView"]
+script = ExtResource("5_fog")
+
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="Camps" type="Node2D" parent="Entities"]
+
+[node name="Cities" type="Node2D" parent="Entities"]
+
+[node name="Units" type="Node2D" parent="Entities"]
+
+[node name="PlayerInputController" type="Node" parent="."]
+script = ExtResource("6_input")
+
+[node name="HUD" parent="." instance=ExtResource("7_hud")]
+
+[node name="TechTreeModal" parent="HUD" instance=ExtResource("8_techmodal")]
+visible = false

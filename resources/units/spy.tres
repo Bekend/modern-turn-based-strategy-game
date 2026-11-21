@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/UnitData.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+variant = ""
+id = "spy"
+unit_name = "Spy"
+unit_class = 0
+combat_strength = 0
+ranged_strength = 0
+attack_range = 1
+max_movement_points = 2
+max_health = 100
+production_cost = 75
+tech_prequisite = "espionage"
+strategic_prequisite = ""
+can_found_city = false
+can_build_improvements = false
+sight_range = 2
+color_tint = Color(0.2, 0.2, 0.3, 1)
+icon_symbol = "🕔"

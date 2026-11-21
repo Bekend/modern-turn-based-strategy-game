@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TechNode" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/TechNode.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+tech_id = "mining"
+title = "Mining"
+description = "Allows excavation of mineral wealth and production-boosting Mines."
+science_cost = 25
+tier = 2
+era = "Ancient"
+prerequisites = ["agriculture"]
+unlocked_units = []
+unlocked_improvements = ["mine"]
+reveals_strategic_resource = ""
+highland_move_cost_reduction = 0
+melee_attack_bonus_percent = 0
+defense_bonus_percent = 0
+tree_column = 1
+tree_row = 0

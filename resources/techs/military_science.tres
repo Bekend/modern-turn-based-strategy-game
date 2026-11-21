@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TechNode" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/TechNode.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+tech_id = "military_science"
+title = "Military Science"
+description = "Rigorous military academies and pistol-armed heavy cavalry doctrines. Unlocks Cuirassiers and +10% faction melee power."
+science_cost = 140
+tier = 8
+era = "Renaissance"
+prerequisites = ["chivalry", "gunpowder"]
+unlocked_units = ["cuirassier"]
+unlocked_improvements = []
+reveals_strategic_resource = ""
+highland_move_cost_reduction = 0
+melee_attack_bonus_percent = 10
+defense_bonus_percent = 5
+tree_column = 7
+tree_row = 1

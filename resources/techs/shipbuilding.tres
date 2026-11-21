@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TechNode" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/TechNode.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+tech_id = "shipbuilding"
+title = "Shipbuilding"
+description = "Advanced ocean naval architecture. Unlocks Galleass and enables all land units to embark into water."
+science_cost = 40
+tier = 4
+era = "Ancient"
+prerequisites = ["sailing"]
+unlocked_units = ["galleass"]
+unlocked_improvements = []
+reveals_strategic_resource = ""
+highland_move_cost_reduction = 0
+melee_attack_bonus_percent = 0
+defense_bonus_percent = 0
+tree_column = 3
+tree_row = 2

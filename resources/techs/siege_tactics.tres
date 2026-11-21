@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TechNode" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/TechNode.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+tech_id = "siege_tactics"
+title = "Siege Tactics"
+description = "Advanced ballistics and heavy wrought-iron cannon manufacture. Unlocks the Bombard to demolish fortifications."
+science_cost = 135
+tier = 7
+era = "Renaissance"
+prerequisites = ["gunpowder"]
+unlocked_units = ["bombard"]
+unlocked_improvements = []
+reveals_strategic_resource = ""
+highland_move_cost_reduction = 0
+melee_attack_bonus_percent = 0
+defense_bonus_percent = 0
+tree_column = 7
+tree_row = 0

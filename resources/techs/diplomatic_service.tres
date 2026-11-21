@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TechNode" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/TechNode.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+tech_id = "diplomatic_service"
+title = "Diplomatic Service"
+description = "Permanent foreign embassies and advanced intelligence networks. Unlocks second spy capacity."
+science_cost = 110
+tier = 10
+era = "Renaissance"
+prerequisites = ["feudalism", "gunpowder"]
+unlocked_units = []
+unlocked_improvements = []
+reveals_strategic_resource = ""
+highland_move_cost_reduction = 0
+melee_attack_bonus_percent = 0
+defense_bonus_percent = 0
+tree_column = 8
+tree_row = 1

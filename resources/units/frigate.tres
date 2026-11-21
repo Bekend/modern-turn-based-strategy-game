@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/UnitData.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+id = "frigate"
+unit_name = "Frigate"
+unit_class = 6
+combat_strength = 45
+ranged_strength = 55
+attack_range = 2
+max_movement_points = 5
+max_health = 100
+production_cost = 115
+tech_prerequisite = "square_rigging"
+strategic_prerequisite = "niter"
+upgrade_unit_id = ""
+upgrade_cost = 0
+can_found_city = false
+can_build_improvements = false
+can_build_military_structures = false
+is_naval = true
+sight_range = 3
+color_tint = Color(0.15, 0.35, 0.65, 1)
+icon_symbol = "⛵"

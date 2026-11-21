@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TechNode" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/TechNode.gd" id="1_res"]
+
+[resource]
+script = ExtResource("1_res")
+tech_id = "iron_working"
+title = "Iron Working"
+description = "Reveals Iron resources and unlocks devastating Swordsman shock infantry."
+science_cost = 65
+tier = 4
+era = "Ancient"
+prerequisites = ["bronze_working"]
+unlocked_units = ["swordsman"]
+unlocked_improvements = []
+reveals_strategic_resource = "iron"
+highland_move_cost_reduction = 1
+melee_attack_bonus_percent = 15
+defense_bonus_percent = 10
+tree_column = 3
+tree_row = 0

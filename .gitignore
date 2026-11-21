@@ -1,0 +1,9 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+*.pck
+*.wasm
+html/*.pck
+html/*.wasm
+
+*.apk
